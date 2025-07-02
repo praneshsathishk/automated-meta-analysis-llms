@@ -1,4 +1,4 @@
-# Automated Meta-Analysis using LLMs (Template)
+# Automated Meta-Analysis using LLMs
 
 This repo implements a full pipeline for automating meta-analysis using large language models. Each step of the process is modular and customizable.
 
