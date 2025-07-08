@@ -1,4 +1,4 @@
-import subprocess
+import os
 from src.utils import call_llama3
 
 
@@ -51,3 +51,71 @@ Output:
         raise ValueError("Unsupported prompt type. Use 'zero-shot' or 'few-shot'.")
 
     return call_llama3(prompt)
+
+
+def generate_and_save_abstract_prompt(research_question, prompt_type="few-shot"):
+    """
+    Generates an abstract screening prompt based on the research question and prompt type,
+    then saves it to prompts/abstract_prompt.txt (relative to project root).
+    """
+
+    if prompt_type == "zero-shot":
+        prompt_text = f"""
+You are an expert biomedical researcher performing abstract screening for a meta-analysis.
+
+Research Question: "{research_question}"
+
+For each abstract provided, respond with "Include" if the abstract is relevant to the research question and should be included in the meta-analysis; otherwise respond with "Exclude".
+
+Abstract:
+{{abstract}}
+
+Decision:
+"""
+    elif prompt_type == "few-shot":
+        prompt_text = f"""
+You are an expert biomedical researcher performing abstract screening for a meta-analysis.
+
+Research Question: "{research_question}"
+
+Decide if the following abstracts are relevant to the research question and should be included in the meta-analysis. Respond ONLY with "Include" or "Exclude".
+
+Examples:
+
+Abstract: Omega-3 fatty acids have been shown to improve memory in elderly patients aged 65 and above...  
+Decision: Include
+
+Abstract: This study analyzes the impact of daily vitamin D supplementation on bone density in children...  
+Decision: Exclude
+
+Abstract:
+{{abstract}}
+
+Decision:
+"""
+    elif prompt_type == "chain-of-thought":
+        prompt_text = f"""
+You are an expert biomedical researcher screening abstracts for a meta-analysis.
+
+Research Question: "{research_question}"
+
+For each abstract, reason step-by-step about its relevance to the research question. Then conclude with "Include" or "Exclude".
+
+Abstract:
+{{abstract}}
+
+Reasoning:
+"""
+    else:
+        raise ValueError("Unsupported prompt type for abstract screening.")
+
+    # Determine absolute path to prompts directory
+    prompts_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "prompts"))
+    os.makedirs(prompts_dir, exist_ok=True)
+
+    prompt_file = os.path.join(prompts_dir, "abstract_prompt.txt")
+
+    with open(prompt_file, "w", encoding="utf-8") as f:
+        f.write(prompt_text.strip())
+
+    print(f"✅ Abstract screening prompt saved to {prompt_file}")

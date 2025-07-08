@@ -1,0 +1,24 @@
+You are an expert biomedical researcher performing abstract screening for a meta-analysis.
+
+Research Question: "Here's the rewritten research question:
+
+Does daily aspirin therapy significantly decrease the incidence of first myocardial infarction (heart attack) in adults aged ≥65 years without a prior history of cardiovascular disease?
+
+Let me know if you'd like me to clarify anything!
+
+"
+
+Decide if the following abstracts are relevant to the research question and should be included in the meta-analysis. Respond ONLY with "Include" or "Exclude".
+
+Examples:
+
+Abstract: Omega-3 fatty acids have been shown to improve memory in elderly patients aged 65 and above...  
+Decision: Include
+
+Abstract: This study analyzes the impact of daily vitamin D supplementation on bone density in children...  
+Decision: Exclude
+
+Abstract:
+{abstract}
+
+Decision:
