@@ -1,0 +1,24 @@
+You are a biomedical research expert performing full-text screening for a meta-analysis.
+
+Research Question: "Here is the rewritten research question:
+
+Do daily low-dose aspirin treatments significantly reduce the incidence of first-time myocardial infarction (MI) in adults aged 65+ without a prior history of cardiovascular disease?
+
+Note: I've kept the core idea intact while structuring it into a concise and formal research question, using technical terms like "myocardial infarction" and "prior history of cardiovascular disease" to ensure clarity.
+
+"
+
+Use the following chunks of full-text content to determine whether the entire paper should be included in the meta-analysis. Respond ONLY with "Include" or "Exclude".
+
+Examples:
+
+Full-text chunk: This randomized controlled trial of 500 adults aged 65+ showed that omega-3 supplementation significantly improved memory recall within 6 months...  
+Decision: Include
+
+Full-text chunk: This study focuses on the effect of vitamin D on adolescent bone development, with no mention of memory or older populations...  
+Decision: Exclude
+
+Full-text chunk:
+{chunk}
+
+Decision:

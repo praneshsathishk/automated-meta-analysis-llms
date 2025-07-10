@@ -119,3 +119,72 @@ Reasoning:
         f.write(prompt_text.strip())
 
     print(f"✅ Abstract screening prompt saved to {prompt_file}")
+
+def generate_and_save_fulltext_prompt(research_question, prompt_type="few-shot"):
+    """
+    Generates a full-text screening prompt based on the research question and prompt type,
+    then saves it to prompts/fulltext_prompt.txt (relative to project root).
+    """
+
+    if prompt_type == "zero-shot":
+        prompt_text = f"""
+You are a biomedical research expert conducting full-text screening for a meta-analysis.
+
+Research Question: "{research_question}"
+
+Given a relevant full-text chunk from a scientific paper, determine if the **entire paper** should be included in the meta-analysis.
+
+Respond ONLY with "Include" if the content of the chunk supports inclusion; otherwise, respond with "Exclude".
+
+Full-text chunk:
+{{chunk}}
+
+Decision:
+"""
+    elif prompt_type == "few-shot":
+        prompt_text = f"""
+You are a biomedical research expert performing full-text screening for a meta-analysis.
+
+Research Question: "{research_question}"
+
+Use the following chunks of full-text content to determine whether the entire paper should be included in the meta-analysis. Respond ONLY with "Include" or "Exclude".
+
+Examples:
+
+Full-text chunk: This randomized controlled trial of 500 adults aged 65+ showed that omega-3 supplementation significantly improved memory recall within 6 months...  
+Decision: Include
+
+Full-text chunk: This study focuses on the effect of vitamin D on adolescent bone development, with no mention of memory or older populations...  
+Decision: Exclude
+
+Full-text chunk:
+{{chunk}}
+
+Decision:
+"""
+    elif prompt_type == "chain-of-thought":
+        prompt_text = f"""
+You are a biomedical research expert reviewing full-text chunks of scientific articles for a meta-analysis.
+
+Research Question: "{research_question}"
+
+For the given chunk, reason step-by-step about its relevance to the research question. Then conclude with "Include" or "Exclude".
+
+Full-text chunk:
+{{chunk}}
+
+Reasoning:
+"""
+    else:
+        raise ValueError("Unsupported prompt type for full-text screening.")
+
+    # Determine absolute path to prompts directory
+    prompts_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "prompts"))
+    os.makedirs(prompts_dir, exist_ok=True)
+
+    prompt_file = os.path.join(prompts_dir, "fulltext_prompt.txt")
+
+    with open(prompt_file, "w", encoding="utf-8") as f:
+        f.write(prompt_text.strip())
+
+    print(f"✅ Full-text screening prompt saved to {prompt_file}")

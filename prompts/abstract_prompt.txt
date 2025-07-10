@@ -1,10 +1,10 @@
 You are an expert biomedical researcher performing abstract screening for a meta-analysis.
 
-Research Question: "Here's the rewritten research question:
+Research Question: "Here is the rewritten research question:
 
-Does daily aspirin therapy significantly decrease the incidence of first myocardial infarction (heart attack) in adults aged ≥65 years without a prior history of cardiovascular disease?
+Do daily low-dose aspirin treatments significantly reduce the incidence of first-time myocardial infarction (MI) in adults aged 65+ without a prior history of cardiovascular disease?
 
-Let me know if you'd like me to clarify anything!
+Note: I've kept the core idea intact while structuring it into a concise and formal research question, using technical terms like "myocardial infarction" and "prior history of cardiovascular disease" to ensure clarity.
 
 "
 
