@@ -1,0 +1,102 @@
+PMCID,error,population,intervention,comparator,outcomes,effect_size,study_design,sample_size,conclusion
+PMC10724809,"{
+""population"": ""Mongolian adults aged 30-70 years"",
+""intervention"": None,
+""comparator"": None,
+""outcomes"": [""CVH metrics"", ""total CVH scores""],
+""effect_size"": ""Independent associations between SDH (education level and health insurance) and CVH were assessed through multinomial logistic regression analyses."",
+""study_design"": ""Secondary data analysis of a cross-sectional survey"",
+""sample_size"": 5691,
+""conclusion"": ""The study aimed to explore the sex and age differences in the independent associations between SDH (educational level and health insurance) and CVH among Mongolian adults.""
+}",,,,,,,,
+PMC10870333,"{
+""population"": ""<50 years old"",
+""intervention"": None,
+""comparator"": None,
+""outcomes"": Not specified,
+""effect_size"": Not applicable ( observational study ),
+""study_design"": Observational, retrospective cohort study,
+""sample_size"": Not specified,
+""conclusion"": The study aimed to determine the clinical characteristics of young STEMI patients (<50 years), their cardiovascular risk at the time of STEMI, and their pre-STEMI eligibility for lipid-lowering therapy.",,,,,,,,
+PMC10899234,,2170 hospitalized patients with COVID-19,Antiplatelet (AP) treatment prior to hospitalization,Patients without previous antiplatelet therapy,"['clinical profile', 'in-hospital course', 'short- and medium-term mortality']",The use of AP treatment reduced all-cause mortality in patients with COVID-19 by 15–20%,Propensity score matching (PSM) study,548,The data suggests that the use of antiplatelet therapy prior to hospitalization may reduce mortality rates in patients hospitalized with COVID-19
+PMC10921250,,Patients with de novo coronary lesions who underwent successful PCI,P2Y12 inhibitor monotherapy for 3 months followed by P2Y12 inhibitor monotherapy,Aspirin plus a P2Y12 inhibitor for 12 months (DAPT),"['Net adverse clinical event (NACE)', 'Major adverse cardiac and cerebrovascular events (MACCEs)', 'Major bleeding']",,Randomized noninferiority clinical trial,1452,
+PMC10999870,"{
+""population"": ""Patients with type 2 diabetes mellitus (T2DM) in Saudi Arabia"",
+""intervention"": None,
+""comparator"": None,
+""outcomes"": [
+""MACE (major adverse cardiovascular events)"",
+""ASCVD (atherosclerotic cardiovascular disease)"",
+""HF (heart failure)"",
+""CKD (chronic kidney disease)"",
+""obesity""
+],
+""effect_size"": ""10% reduction in MACE with SGLT2i, 16% reduction in MACE with GLP-1 RA"",
+""study_design"": ""Two-center retrospective observational study"",
+""sample_size"": Not specified,
+""conclusion"": Not available (this appears to be a research article describing a study, not presenting the results of a meta-analysis)",,,,,,,,
+PMC11010083,,Patients with established cardiovascular disease,Aspirin dosing (81 mg or 325 mg daily),None,"['Death', 'Hospitalization for myocardial infarction', 'Hospitalization for stroke']",No significant modification of aspirin dosing effect by age,"Open-label, multicenter, patient-centered, and pragmatic randomized trial (RCT)",15076,"Either dose is associated with a similar risk of death, hospitalization for myocardial infarction, or hospitalization for stroke in this population, irrespective of age."
+PMC11098647,,hospitalized patients with Takotsubo syndrome reported to the Swedish Coronary Angiography and Angioplasty Registry (SCAAR) between June 2009 and March 2016,pharmacological treatment received during hospitalization and after discharge,none,"['mortality at 30 days', 'long-term survival']","adjusted for differences in patient characteristics, using multivariable Cox proportional hazards",observational study with retrospective data analysis,large cohort of TS patients (number not specified),evaluation of the effect of pharmacological treatment received during hospitalization and after discharge on short- and long-term survival in a large cohort of TS patients
+PMC11132442,"{
+""population"": ""Men aged 65-74 years old"",
+""intervention"": ""Comprehensive cardiovascular screening examination"",
+""comparator"": ""Usual care"",
+""outcomes"": [""User-defined primary outcome: composite reasons chosen by more than 50% of the population"", 
+            ""Secondary outcomes: major adverse cardiovascular events (MACE), major adverse limb events (MALE), individual components, and exploratory outcomes""],
+""effect_size"": ""Not provided in this paper"",
+""study_design"": ""Post hoc analysis of a multicentre, parallel-group, unmasked randomised controlled trial"",
+""sample_size"": ""16,736 men (invited-to-screening group: 10,471; usual-care group: 29,790)"",
+""conclusion"": ""The screening did not result in a decrease in all-cause mortality, although a clinically important benefit could not be ruled out.""",,,,,,,,
+PMC11196263,"{
+""population"": ""ACS patients"",
+""intervention"": ""Reduced platelet count at hospital admission"",
+""comparator"": ""Normal platelet count"",
+""outcomes"": [""Major adverse cardiovascular events"", ""Antithrombotic treatment approach""],
+""effect_size"": N/A,
+""study_design"": ""Observational study"",
+""sample_size"": 1894,
+""conclusion"": ""Patients with a reduced platelet count at hospital admission were older and more frequently males, with a higher prevalence of hypertension, NVAF, and PAD. They had similar major cardiovascular risk factors compared to patients with normal platelet counts.""",,,,,,,,
+PMC11268649,"{
+""population"": ""Patients newly prescribed cardiovascular drugs in UK primary care setting"",
+""intervention"": ""Cardiovascular drugs (ACEIs/ARBs, CCBs, diuretics, lipid regulating drugs, antiplatelets and anticoagulants, beta blockers, and nitrates)"",
+""comparator"": ""None"",
+""outcomes"": [""Consultations related to cardiovascular drug-related ADRs""],
+""effect_size"": ""Not applicable (prevalence of consultations)"",
+""study_design"": ""Cross-sectional study"",
+""sample_size"": ""Not specified"",
+""conclusion"": ""The prevalence of consultations related to cardiovascular drug-related ADRs in the UK primary care setting was estimated and risk factors were identified.""",,,,,,,,
+PMC11334244,,774 non-diabetic patients diagnosed with NSTEMI,,,In-hospital mortality,,Retrospective study and nomogram development,774,"A nomogram prediction model for hazard stratification of the risk of in-hospital death in patients with NSTEMI was developed, which can positively influence clinical decision-making and patient prognosis to a certain extent."
+PMC11352401,,Patients with Monoclonal Gammopathy of Undetermined Significance (MGUS) and those without MGUS,Presence of MGUS,None,"['heart failure', 'atrial fibrillation', 'acute myocardial infarction (MI)', 'aortic aneurysm', 'aortic dissection', 'aortic stenosis', 'aortic regurgitation', 'mitral stenosis', 'mitral regurgitation', 'conduction disorders', 'pericarditis', 'peripheral vascular disease (PVD)', 'cor pulmonale', 'venous thromboembolism (VTE)', 'ischemic stroke/transient ischemic attack (TIA)']",Association between MGUS and cardiovascular outcomes,Observational study using the National Inpatient Sample (NIS) database,"4,054,809 patients with concomitant multiple myeloma, smoldering multiple myeloma, B-cell lymphomas, non-Hodgkin lymphomas, amyloidosis, and Waldenstrom's macroglobulinemia were excluded. The remaining sample size is not specified.","MGUS patients had an increased risk of developing a wide range of cardiovascular diseases, including heart failure, atrial fibrillation, acute myocardial infarction (MI), and others."
+PMC11589165,"{
+""population"": ""Patients with multivessel coronary artery disease (MVD) who underwent drug-eluting stent (DES) implantation for 12 months"",
+""intervention"": ""Prolonged dual antiplatelet therapy (DAPT) treatment with clopidogrel and aspirin for 12 months"",
+""comparator"": ""Aspirin monotherapy for 12 months"",
+""outcomes"": [""Major adverse cardiovascular and cerebrovascular events (MACCEs)"", ""Cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke""],
+""effect_size"": ""Not specified in the provided text"",
+""study_design"": ""Multicenter, open-label, randomized controlled trial (RCT)"",
+""sample_size"": 8250,
+""conclusion"": ""The study aims to evaluate whether extending DAPT with clopidogrel and aspirin for 12 months would improve the long-term prognosis for MVD patients 12 months after DES implantation.""",,,,,,,,
+PMC11607373,,US adults 40 years or older,Aspirin (ASA) use,None,"Prevalence of ASA use, expenditures, and changes over time by demographic groups",Summary not provided as the study focuses on descriptive statistics and trend analysis,Retrospective longitudinal cohort study,Not specified,"ASA use significantly increased, with more low-dose use and less high-dose use, particularly among women and African Americans. Despite guidelines advising against ASA for primary prevention in older adults without ASCVD, many patients aged ≥ 70 years continue its use."
+PMC11634293,,Patients with ST-segment elevation myocardial infarction (STEMI) and/or stable coronary artery disease (SCAD) who underwent percutaneous coronary intervention (PCI),Dual antiplatelet therapy (DAPT) combination of aspirin (75-100mg/day) and clopidogrel (75mg/day) for 5 months,,"['Combined primary endpoints: hospitalization for any reason, hospitalization for cardiovascular reason, acute myocardial infarction, stent thrombosis, revascularization of the target vessel (RVA), and bleeding', 'Secondary outcomes: all-cause mortality, cardiovascular mortality, and stroke']",,"Prospective, observational cohort study",1500,
+PMC11699307,"{
+""population"": ""Adult patients (age ≥ 18 years) presenting to the KCMC ED with a primary or secondary complaint of chest pain or shortness of breath"",
+""intervention"": ""Quality improvement measures in the ED, including hiring additional ED physicians with residency training in emergency medicine, conducting ACS training for all clinical staff, and creation of a WhatsApp group with an interventional cardiology team to facilitate expedited expert consultation and referral"",
+""comparator"": ""None (prospective observational study)"",
+""outcomes"": ""Prevalence of ACS, 30-day mortality rates, predictors of 30-day mortality among patients with ACS"",
+""effect_size"": ""Not provided"",
+""study_design"": ""Prospective observational study"",
+""sample_size"": ""Not explicitly stated"",
+""conclusion"": ""The study aimed to determine the prevalence of ACS in the KCMC ED using a more rigorous serial troponin testing protocol, prospectively describe ACS care and outcomes following the implementation of quality improvement measures at KCMC, and identify predictors of 30-day mortality among patients with ACS at KCMC""",,,,,,,,
+PMC11754521,,"Healthy volunteers (n = 28) and patients with acute coronary syndrome (ACS), significant coronary artery disease (CAD), risk-factor controls with no significant CAD (RF), and healthy controls (HC); also, patients undergoing vascular surgery or percutaneous transluminal intervention to treat arterial thrombotic disorders.",Aspirin 75 mg once daily for seven days,None specified,"Platelet activation, platelet-rich plasma isolation, and platelet poor plasma extraction",Summary of results not provided; study appears to focus on methods rather than clinical outcomes.,"Observational study with repeated measures (pre-aspirin, post-aspirin, 2 months later) in some participants",90 patients and 28 healthy volunteers,Summary of conclusions not provided; study appears to focus on methods rather than clinical outcomes.
+PMC11913457,,"Men and women aged over 40 years with ST-segment elevation myocardial infarction (STEMI) who were hospitalized in three referral hospitals in Isfahan, Iran.",Polypill treatment,Usual care,"['Medication adherence', 'Patient satisfaction', 'Lipid profile control']",Not provided (study does not report an effect size),"Open-label, multicentric, parallel two-arm, 1:1 allocation randomized clinical trial",Not provided (study does not specify sample size),"The study aimed to compare one-year medication adherence, patient satisfaction, and lipid profile control in STEMI patients treated with the polypill versus usual care."
+PMC11935617,,Patients aged ≥20 years who maintained aspirin plus any P2Y 12 inhibitor without any clinical events for 6 to 18 months after undergoing successful PCI with drug-eluting stents,Clopidogrel (75 mg once daily),Aspirin (100 mg once daily),"['Composite of all-cause death, nonfatal myocardial infarction, stroke, readmission due to acute coronary syndrome, and major bleeding complications', 'Thrombotic composite end point', 'Any bleeding']",Not specified,"Post hoc analysis of a randomized, multicenter, prospective, open-label trial",Not specified,Clopidogrel may be preferred over aspirin for long term secondary prevention regardless of baseline renal function.
+PMC11955879,"{
+""population"": ""Patients with acute coronary syndrome who received treatment exclusively with a drug-coated balloon (DCB) for percutaneous coronary intervention"",
+""intervention"": ""Stepwise DAPT de-escalation: aspirin plus ticagrelor for one month, followed by ticagrelor monotherapy for five months, and then aspirin monotherapy for six months."",
+""comparator"": ""Standard 12 months DAPT (aspirin plus ticagrelor)"",
+""outcomes"": [""Net adverse clinical events"", ""Clinically relevant ischaemic or bleeding event"", ""BARC type 2, 3 or 5 bleeding"", ""BARC type 3 or 5 bleeding"", ""BARC type 2 bleeding""],
+""effect_size"": Not specified,
+""study_design"": ""Randomised trial"",
+""sample_size"": Not specified,
+""conclusion"": Not applicable (this is a research paper, not a summary of results)
+}",,,,,,,,

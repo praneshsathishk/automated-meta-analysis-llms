@@ -1,3 +1,4 @@
+import shutil
 from src.research_question_generator import (
     generate_clarifying_questions,
     finalize_research_question,
@@ -6,12 +7,14 @@ from src.research_question_generator import (
 )
 from src.keyword_generator import generate_keywords
 from src.pubmed_search import search_pubmed, fetch_pubmed_metadata, save_metadata_to_csv
-from src.abstract_screening import screen_abstracts
+from src.abstract_screening import screen_abstracts  # ✅ Now used
 from src.fulltext_downloader import download_fulltexts
 from src.fulltext_chunking import chunk_all_fulltexts
 from src.chunk_vectorizer import vectorize_chunks
 from src.fulltext_screening import fulltext_screening
-
+from src.data_extraction import extract_all
+from src.synthesis import synthesize_meta_analysis
+'''
 print("\n[Step 1] USER INPUT AND LLaMA CLARIFICATION")
 
 user_input = "aspirin and heart attacks"
@@ -49,24 +52,27 @@ print("\n[Step 3] ABSTRACT SCREENING")
 input_csv = "outputs/papers.csv"
 filtered_csv = "outputs/filtered_papers.csv"
 
-screen_abstracts(input_csv_path=input_csv, output_csv_path=filtered_csv)
-
-print(f"\n🎉 Done! Filtered papers saved to {filtered_csv}")
+# ✅ Run LLM-based abstract screening
+screen_abstracts(input_csv, filtered_csv)
+print(f"\n✅ Abstract screening complete — saved to {filtered_csv}")
 
 print("\n[Step 4] DOWNLOADING FULL-TEXT XMLS")
 download_fulltexts(filtered_csv)
-
 print("\n🎉 Done! Full-text XMLs saved to data/fulltext_xml/")
 
 print("\n[Step 5] CHUNKING FULL-TEXT XMLS")
 chunk_all_fulltexts()
-
 print("\n🎉 Done! Full-text chunks saved to data/fulltext_chunks.csv")
 
 print("\n[Step 6] EMBEDDING CHUNKS AND BUILDING FAISS INDEX")
 vectorize_chunks()
-
 print("\n🎉 Done! FAISS index and metadata saved to faiss_index/")
 
 print("\n[Step 7] FULL-TEXT SCREENING")
 fulltext_screening()
+'''
+print("\n[Step 8] DATA EXTRACTION FROM INCLUDED PAPERS")
+extract_all()
+
+print("\n[Step 9] META-ANALYSIS SYNTHESIS")
+synthesize_meta_analysis()

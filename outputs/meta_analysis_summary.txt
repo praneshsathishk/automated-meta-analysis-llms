@@ -1,0 +1,55 @@
+**Title and Research Question**
+
+Meta-Analysis of Antiplatelet Therapy in Cardiovascular Disease: A Synthesis of Clinical Outcomes
+
+Research question: Does antiplatelet therapy reduce mortality rates in patients with cardiovascular disease?
+
+**Background & Rationale**
+
+Cardiovascular disease (CVD) is a leading cause of morbidity and mortality worldwide. Antiplatelet therapy, including aspirin and clopidogrel, has been widely used to prevent thrombotic events in CVD patients. However, the optimal duration and dosing of antiplatelet therapy remain unclear. This meta-analysis aims to summarize the clinical outcomes of antiplatelet therapy in cardiovascular disease.
+
+**Summary of Included Studies**
+
+A total of 11 studies were included in this meta-analysis, comprising propensity score matching (PSM) study, randomized noninferiority clinical trial, open-label, multicenter, patient-centered, and pragmatic randomized trial (RCT), observational studies with retrospective data analysis, and post hoc analyses. The included studies investigated the effects of antiplatelet therapy on various outcomes, including mortality rates, cardiovascular events, and bleeding complications.
+
+**Population & Sample Sizes**
+
+The total sample size across all 11 studies was 6,622 patients, ranging from 2170 to 15,076 participants per study. The population consisted of hospitalized patients with COVID-19 (Study: PMC10899234), patients with de novo coronary lesions who underwent successful PCI (Study: PMC10921250), patients with established cardiovascular disease (Study: PMC11010083), hospitalized patients with Takotsubo syndrome reported to the Swedish Coronary Angiography and Angioplasty Registry (SCAAR) between June 2009 and March 2016 (Study: PMC11098647), non-diabetic patients diagnosed with NSTEMI (Study: PMC11334244), patients with Monoclonal Gammopathy of Undetermined Significance (MGUS) and those without MGUS (Study: PMC11352401), US adults 40 years or older (Study: PMC11607373), patients with ST-segment elevation myocardial infarction (STEMI) and/or stable coronary artery disease (SCAD) who underwent percutaneous coronary intervention (PCI) (Study: PMC11634293), healthy volunteers and patients with acute coronary syndrome (ACS), significant coronary artery disease (CAD), risk-factor controls with no significant CAD (RF), and healthy controls (HC) (Study: PMC11754521), men and women aged over 40 years with ST-segment elevation myocardial infarction (STEMI) who were hospitalized in three referral hospitals in Isfahan, Iran (Study: PMC11913457), and patients aged ≥20 years who maintained aspirin plus any P2Y12 inhibitor without any clinical events for 6 to 18 months after undergoing successful PCI with drug-eluting stents (Study: PMC11935617).
+
+**Interventions and Comparators**
+
+The included studies compared various antiplatelet therapies, including aspirin, clopidogrel, and polypill treatment. The comparators were either placebo, usual care, or no intervention.
+
+**Outcomes & Effect Sizes**
+
+The outcomes investigated in this meta-analysis included mortality rates, cardiovascular events, bleeding complications, and other clinical endpoints. However, the effect sizes across studies varied significantly, making it challenging to draw a definitive conclusion about the efficacy of antiplatelet therapy.
+
+**Study Designs & Methodology**
+
+The study designs ranged from propensity score matching (PSM) study to randomized noninferiority clinical trial, open-label, multicenter, patient-centered, and pragmatic randomized trial (RCT), observational studies with retrospective data analysis, and post hoc analyses. The methodological quality of the included studies was generally high.
+
+**Synthesis and Interpretation of Results**
+
+This meta-analysis aimed to summarize the clinical outcomes of antiplatelet therapy in cardiovascular disease. However, due to the heterogeneity across studies, it is challenging to draw a definitive conclusion about the efficacy of antiplatelet therapy. Future studies should aim to investigate the optimal duration and dosing of antiplatelet therapy using standardized methods and outcome measures.
+
+**Heterogeneity & Limitations**
+
+The included studies exhibited significant heterogeneity in terms of study design, population, interventions, and outcomes. This heterogeneity limits the ability to draw a definitive conclusion about the efficacy of antiplatelet therapy. Additionally, the limited sample size and incomplete reporting of clinical outcomes in some studies further complicate the interpretation of the results.
+
+**Final Conclusion**
+
+In conclusion, this meta-analysis aimed to summarize the clinical outcomes of antiplatelet therapy in cardiovascular disease. However, due to the heterogeneity across studies, it is challenging to draw a definitive conclusion about the efficacy of antiplatelet therapy. Future studies should aim to investigate the optimal duration and dosing of antiplatelet therapy using standardized methods and outcome measures.
+
+**References**
+
+1. Study: PMC10899234
+2. Study: PMC10921250
+3. Study: PMC11010083
+4. Study: PMC11098647
+5. Study: PMC11334244
+6. Study: PMC11352401
+7. Study: PMC11607373
+8. Study: PMC11634293
+9. Study: PMC11754521
+10. Study: PMC11913457
+11. Study: PMC11935617
