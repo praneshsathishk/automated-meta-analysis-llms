@@ -1,100 +1,132 @@
 import pandas as pd
 import os
-from tqdm import tqdm
+import json
+import re
 from src.utils import call_llama3
-import json  # Make sure this is at the top of your file
+from collections import defaultdict
+from tqdm import tqdm
 
-# Paths
-FINAL_SCREENING_CSV = "outputs/fulltext_screening_results.csv"
-CHUNK_METADATA_PATH = "faiss_index/chunk_metadata.csv"
-EXTRACTION_OUTPUT_CSV = "outputs/extracted_data.csv"
-
-# Prompt template
-EXTRACTION_PROMPT_TEMPLATE = """
-You are an expert in clinical meta-analysis.
-
-Based on the following full-text content from a research paper, extract the following information:
-- Population
-- Intervention
-- Comparator (if any)
-- Outcome(s)
-- Effect Size(s) (or summary of results)
-- Study Design (e.g., RCT, observational, meta-analysis, etc.)
-- Sample Size
-- Conclusion Summary
-
-Paper Full Text:
------------------
-{full_text}
-
-Format your output in JSON with keys:
-"population", "intervention", "comparator", "outcomes", "effect_size", "study_design", "sample_size", "conclusion".
-
-Provide only the JSON output, no other text before or after. This includes no disclaimers or anything of the sort.
-"""
-
-
-def load_data():
-    screened_df = pd.read_csv(FINAL_SCREENING_CSV)
-    chunk_df = pd.read_csv(CHUNK_METADATA_PATH)
-    return screened_df, chunk_df
-
-
-def extract_full_text(pmcid, chunk_df):
-    chunks = chunk_df[chunk_df["PMCID"] == pmcid]["chunk_text"].tolist()
-    return "\n\n".join(chunks)
-
-
-def extract_structured_data(pmcid, full_text):
-    prompt = EXTRACTION_PROMPT_TEMPLATE.replace("{full_text}", full_text[:10000])  # Truncate if needed
-    response = call_llama3(prompt).strip()
-
-    # Robust extraction of first balanced JSON object in response
+def extract_from_chunk(title, chunk_text, pmcid):
+    system_prompt = (
+        "You are an expert at reading scientific article chunks and extracting detailed information "
+        "for meta-analysis. Extract structured data in JSON format with fields:\n"
+        "- population (demographics, health status, subgroups)\n"
+        "- intervention (type, dosage, frequency, duration, method)\n"
+        "- comparator (control or baseline groups)\n"
+        "- outcomes (primary, secondary, measurement methods)\n"
+        "- effect_size (statistics, risk ratios, CIs, p-values)\n"
+        "- study_design (type, randomization, blinding, follow-up)\n"
+        "- sample_size (total and group sizes)\n"
+        "- conclusion (key findings, statistical & practical significance)\n"
+        "Be as detailed and specific as possible."
+    )
+    user_prompt = (
+        f"Title: {title}\n\nText Chunk:\n{chunk_text}\n\n"
+        "Extract exactly in this JSON format:\n"
+        "{\n"
+        '  "population": "...",\n'
+        '  "intervention": "...",\n'
+        '  "comparator": "...",\n'
+        '  "outcomes": ["...", "..."],\n'
+        '  "effect_size": "...",\n'
+        '  "study_design": "...",\n'
+        '  "sample_size": "...",\n'
+        '  "conclusion": "...",\n'
+        f'  "PMCID": "{pmcid}"\n'
+        "}"
+    )
+    prompt = system_prompt + "\n\n" + user_prompt
     try:
-        start = response.index('{')
-        brace_count = 0
-        end = None
-        for i in range(start, len(response)):
-            if response[i] == '{':
-                brace_count += 1
-            elif response[i] == '}':
-                brace_count -= 1
-                if brace_count == 0:
-                    end = i + 1
-                    break
-        if end is None:
-            raise ValueError("No balanced JSON object found")
-
-        json_str = response[start:end]
-        parsed = json.loads(json_str)
-        parsed["PMCID"] = pmcid
-        return parsed
-
+        return call_llama3(prompt, model="llama3")
     except Exception as e:
-        print(f"⚠️ Failed to parse response for PMCID {pmcid}: {e}")
-        return {"PMCID": pmcid, "error": response.strip()}
+        print(f"Error calling LLaMA 3 on chunk: {e}")
+        return None
 
+def safe_json_parse(llm_output):
+    llm_output = llm_output.strip()
+    match = re.search(r"\{[\s\S]*?\}", llm_output)
+    if not match:
+        return None
+    json_str = match.group(0).replace("'", '"')
+    json_str = re.sub(r'(:\s*)([A-Za-z][\w\s\-/&()]+)([,\n}])', r'\1"\2"\3', json_str)
+    try:
+        return json.loads(json_str)
+    except json.JSONDecodeError as e:
+        print(f"JSON parsing failed: {e}")
+        return None
+
+def merge_fields(agg_list):
+    filtered = [str(x).strip() for x in agg_list if x and x.lower() not in ['not specified', 'none', 'not mentioned', '']]
+    unique = list(dict.fromkeys(filtered))
+    return "; ".join(unique) if unique else ""
+
+def merge_lists(agg_lists):
+    combined = []
+    for lst in agg_lists:
+        if isinstance(lst, list):
+            combined.extend(lst)
+        elif isinstance(lst, str):
+            combined.append(lst)
+    unique = list(dict.fromkeys([item.strip() for item in combined if item and item.lower() != 'none']))
+    return unique
 
 def extract_all():
-    screened_df, chunk_df = load_data()
-    pmcids = screened_df["PMCID"].tolist()
+    SCREENING_RESULTS = "outputs/fulltext_screening_results.csv"
+    CHUNK_METADATA = "faiss_index/chunk_metadata.csv"
 
-    results = []
-    for pmcid in tqdm(pmcids, desc="Extracting data from papers"):
-        full_text = extract_full_text(pmcid, chunk_df)
-        if not full_text:
-            print(f"⚠️ No text found for {pmcid}")
+    screening_df = pd.read_csv(SCREENING_RESULTS)
+    screening_df["PMCID"] = screening_df["PMCID"].astype(str).str.strip()
+    chunks_df = pd.read_csv(CHUNK_METADATA, quotechar='"', encoding='utf-8')
+    chunks_df["PMCID"] = chunks_df["PMCID"].astype(str).str.strip()
+
+    all_results = []
+
+    for pmcid in tqdm(screening_df["PMCID"].unique()):
+        matching_papers = screening_df[screening_df["PMCID"] == pmcid]
+        if matching_papers.empty:
+            continue
+        paper_meta = matching_papers.iloc[0]
+
+        paper_chunks = chunks_df[chunks_df["PMCID"] == pmcid].copy()
+        if paper_chunks.empty:
             continue
 
-        result = extract_structured_data(pmcid, full_text)
-        results.append(result)
+        paper_chunks["chunk_number"] = paper_chunks["chunk_id"].apply(lambda x: int(x.split('_chunk_')[1]))
+        paper_chunks = paper_chunks.sort_values("chunk_number")
 
-    df_out = pd.DataFrame(results)
+        aggregated = defaultdict(list)
+
+        for _, row in paper_chunks.iterrows():
+            print(f"Extracting from PMCID {pmcid} chunk {row['chunk_number']}...")
+            llm_output = extract_from_chunk(paper_meta['Title'], row['chunk_text'], pmcid)
+            if not llm_output:
+                continue
+            parsed = safe_json_parse(llm_output)
+            if not parsed:
+                continue
+            for key in ['population', 'intervention', 'comparator', 'effect_size', 'study_design', 'sample_size', 'conclusion']:
+                if key in parsed and parsed[key]:
+                    aggregated[key].append(parsed[key])
+            if 'outcomes' in parsed and parsed['outcomes']:
+                aggregated['outcomes'].append(parsed['outcomes'])
+
+        final_result = {
+            "population": merge_fields(aggregated['population']),
+            "intervention": merge_fields(aggregated['intervention']),
+            "comparator": merge_fields(aggregated['comparator']),
+            "outcomes": merge_lists(aggregated['outcomes']),
+            "effect_size": merge_fields(aggregated['effect_size']),
+            "study_design": merge_fields(aggregated['study_design']),
+            "sample_size": merge_fields(aggregated['sample_size']),
+            "conclusion": merge_fields(aggregated['conclusion']),
+            "PMCID": pmcid
+        }
+        all_results.append(final_result)
+
     os.makedirs("outputs", exist_ok=True)
-    df_out.to_csv(EXTRACTION_OUTPUT_CSV, index=False)
-    print(f"\n✅ Extracted data saved to {EXTRACTION_OUTPUT_CSV}")
-    return df_out
-
+    output_file = "outputs/extracted_data_all_papers.csv"
+    pd.DataFrame(all_results).to_csv(output_file, index=False)
+    print(f"✅ Saved extracted data for all papers to {output_file}")
 
 if __name__ == "__main__":
     extract_all()

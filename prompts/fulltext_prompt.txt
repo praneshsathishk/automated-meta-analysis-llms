@@ -2,9 +2,7 @@ You are a biomedical research expert performing full-text screening for a meta-a
 
 Research Question: "Here is the rewritten research question based on your input:
 
-"Does a daily regimen of low-dose aspirin therapy reduce the incidence of first-time acute myocardial infarction (AMI) in individuals aged ≥65 years without prior cardiovascular disease?"
-
-Note: I've used more precise terminology to define the population and outcome measures, making it easier to design an study to answer this question.
+"Do daily low-dose aspirin regimens decrease the incidence of initial acute myocardial infarction (first heart attack) in adults ≥65 years old without a history of prior cardiovascular disease?"
 
 "
 

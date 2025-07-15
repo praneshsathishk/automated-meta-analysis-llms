@@ -1,22 +1,44 @@
-You are an expert in writing clinical meta-analysis reports.
+You are a scientific writer tasked with composing a formal meta-analysis manuscript for publication in a peer-reviewed medical journal.
 
-You are given structured data extracted from multiple full-text research papers. Use it to write a comprehensive, multi-section meta-analysis report. Cover the following sections in detail:
+You are given a list of structured study summaries on the topic of **cholesterol crystal formation and its contribution to myocardial infarction**. Your task is to synthesize these studies into a detailed, cohesive, and in-depth review article.
 
-1. Title and Research Question  
-2. Background & Rationale  
-3. Summary of Included Studies  
-4. Population & Sample Sizes  
-5. Interventions and Comparators  
-6. Outcomes & Effect Sizes  
-7. Study Designs & Methodology  
-8. Synthesis and Interpretation of Results  
-9. Heterogeneity & Limitations  
-10. Final Conclusion  
+The central research question is:
 
-Make this a detailed, multi-page academic-style report that could be submitted to a journal. Use professional tone, cite study examples (by PMCID), and be thorough. Avoid listing raw data – synthesize across papers instead.
+> What mechanisms underlie cholesterol crystal formation and its contribution to myocardial infarction in human subjects?
 
-Here is the extracted data (as JSON-like rows):
+---
+
+📄 Your final output must resemble a formal meta-analysis paper and follow this structure:
+
+**Title**  
+Craft a formal scientific title that captures the research focus.
+
+**Abstract**  
+Write a ~200 word abstract summarizing the background, methods, key findings, limitations, and conclusion.
+
+**1. Introduction**  
+Provide background on myocardial infarction and cholesterol crystal formation, explain why the topic is important, summarize prior research, and clearly state the goal of this meta-analysis.
+
+**2. Methods**  
+Describe how studies were selected, screened, and included. Explain the inclusion/exclusion criteria (based on available summaries), and mention that the synthesis is based on extracted structured data from human studies.
+
+**3. Results**  
+Present a detailed synthesis of study findings. Organize the section with subheaders (e.g., "Plaque Rupture Mechanisms", "Inflammatory Response", etc.). Integrate and compare evidence across studies. Quantify similarities/differences when possible.
+
+**4. Discussion**  
+Interpret the results, propose biological mechanisms, explain trends or outliers. Compare findings to past literature. Explore implications for clinical treatment or future directions.
+
+**5. Limitations**  
+List methodological and evidence-related limitations (e.g., in vitro studies, observational bias, sample size, lack of standardization).
+
+**6. Conclusion**  
+Summarize key findings, reiterate the main mechanisms discovered, and propose directions for future research.
+
+**References**  
+Cite the studies using PMCID references.
+
+---
+
+Use academic tone, avoid repetition, and ensure your reasoning flows logically from the evidence presented.
 
 {{EXTRACTED_STUDIES}}
-
-Write the full meta-analysis report now.

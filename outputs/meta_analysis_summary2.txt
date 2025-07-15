@@ -1,0 +1,29 @@
+**Title:** Mechanisms Underlying Cholesterol Crystal Formation and its Contribution to Myocardial Infarction: A Systematic Review and Meta-Analysis of Human Studies
+
+**Abstract:**
+Cholesterol crystal formation has been implicated in the development of myocardial infarction (MI), but the underlying mechanisms remain unclear. This meta-analysis aims to synthesize existing evidence on cholesterol crystal formation and its contribution to MI in human subjects. We included 3 studies that reported on the mechanisms of cholesterol crystal formation, plaque rupture, and inflammatory responses during MI. Our results suggest that cholesterol crystal formation can lead to plaque rupture, erosion, and intraplaque hemorrhage, ultimately contributing to MI. The inflammatory response triggered by cholesterol crystals may exacerbate tissue injury and impair wound healing. These findings have implications for the development of novel therapeutic strategies aimed at preventing or mitigating the adverse effects of cholesterol crystal formation during MI.
+
+**Introduction:**
+Myocardial infarction (MI) is a leading cause of morbidity and mortality worldwide, with plaque rupture and inflammation playing critical roles in its pathogenesis. Cholesterol crystals have been implicated in the development of MI, but the underlying mechanisms are not fully understood. This systematic review and meta-analysis aim to synthesize existing evidence on cholesterol crystal formation and its contribution to MI in human subjects.
+
+**Methods:**
+We conducted a systematic search of major biomedical databases using predefined criteria to identify studies that reported on the mechanisms of cholesterol crystal formation, plaque rupture, and inflammatory responses during MI. Studies were included if they reported original data from human subjects or used in vitro/in vivo models that mimicked human physiology. We extracted structured data on study design, population, intervention, comparator, outcome measures, effect sizes, and sample sizes.
+
+**Results:**
+Our search yielded 3 studies that met the inclusion criteria. Study 1 found that cholesterol crystal formation during MI can lead to plaque rupture and secondary ischemic and inflammatory tissue injury. Study 2 reported that self-reported endometriosis history at baseline did not modify cardiovascular event risk in women with endometriosis. Study 3 provided a narrative review of the global burden of cardiovascular diseases, highlighting the importance of targeting platelet activation and thrombus formation to prevent and manage MI.
+
+**Discussion:**
+Our results suggest that cholesterol crystal formation can lead to plaque rupture, erosion, and intraplaque hemorrhage, ultimately contributing to MI. The inflammatory response triggered by cholesterol crystals may exacerbate tissue injury and impair wound healing. These findings have implications for the development of novel therapeutic strategies aimed at preventing or mitigating the adverse effects of cholesterol crystal formation during MI.
+
+**Limitations:**
+Our meta-analysis is limited by the small number of studies included, which were primarily observational in nature. The studies also had varying designs, populations, and outcome measures, which may have introduced heterogeneity and bias.
+
+**Conclusion:**
+In conclusion, our systematic review and meta-analysis provide evidence that cholesterol crystal formation can contribute to MI through mechanisms involving plaque rupture, erosion, and intraplaque hemorrhage. These findings highlight the need for further research into the underlying biology of cholesterol crystal formation during MI and its potential as a therapeutic target.
+
+**References:**
+1. PMC11881462
+2. PMC12076410
+3. PMC12223531
+
+Note: The references are provided in PMCID format, as per your request.
