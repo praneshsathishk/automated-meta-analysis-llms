@@ -15,7 +15,7 @@ from src.fulltext_screening import fulltext_screening
 from src.data_extraction import extract_all
 from src.synthesis import synthesize_meta_analysis
 
-'''
+
 
 print("\n[Step 1] USER INPUT AND LLaMA CLARIFICATION")
 
@@ -74,6 +74,6 @@ print("\n[Step 7] FULL-TEXT SCREENING")
 fulltext_screening()
 print("\n[Step 8] DATA EXTRACTION FROM INCLUDED PAPERS")
 extract_all()
-'''
+
 print("\n[Step 9] META-ANALYSIS SYNTHESIS")
 synthesize_meta_analysis()
